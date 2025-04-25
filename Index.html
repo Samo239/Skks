@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+  <meta charset="UTF-8">
+  <title>Սա քեզ իմ հրեշտակ❤️</title>
+  <style>
+    body {
+      background: white;
+      color: black;
+      font-family: "Segoe UI", sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    .hidden, #content, #examSection, #chessText, #booksSection {
+      display: none;
+    }
+    .heart {
+      font-size: 24px;
+      color: red;
+      margin: 0 3px;
+    }
+    .poem {
+      white-space: pre-wrap;
+      font-size: 18px;
+      line-height: 1.6;
+      margin: 30px 0;
+    }
+    .timer, .timeofday-message, .planet, .thoughts-counter {
+      margin-top: 40px;
+      font-size: 18px;
+    }
+    button, input {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    .menu-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 30px;
+      cursor: pointer;
+    }
+    .menu {
+      position: fixed;
+      top: 60px;
+      right: 20px;
+      background: #fff;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      padding: 10px;
+      display: none;
+      text-align: left;
+    }
+    .menu a {
+      display: block;
+      padding: 8px 12px;
+      text-decoration: none;
+      color: black;
+    }
+    .menu a:hover {
+      background-color: #f2f2f2;
+    }
+    .certificate {
+      border: 3px solid gold;
+      border-radius: 15px;
+      padding: 20px;
+      margin-top: 30px;
+      background: #fffbea;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+    }
+    .hearts-40 {
+      font-size: 20px;
+      color: red;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 20px;
+    }
+    .drawing {
+      margin-top: 30px;
+      font-style: italic;
+      color: #444;
+    }
+    .book-quotes p {
+      font-size: 16px; /* Reduced font size */
+      line-height: 1.6;
+      margin: 20px 0;
+    }
+    .book-quotes span {
+      font-weight: bold;
+    }
+    .thoughts {
+      font-style: italic;
+      margin-top: 50px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div id="menuToggle" style="display: none;">
+    <button class="menu-button" onclick="toggleMenu()">☰</button>
+    <div class="menu" id="menu">
+      <a href="#" onclick="showMainContent()">Գլխավոր էջ</a>
+      <a href="#" onclick="showExamSection()">Քննություններ</a>
+      <a href="#" onclick="showBooksSection()">Գրքեր</a>
+      <a href="javascript:void(0);" onclick="showChessText()">Շախմատ</a>
+      <a href="javascript:void(0);" onclick="showMagicHeart()">❤️ Հայելի ❤️</a>
+<a href="javascript:void(0);" onclick="showSecretChessBoard()">♟️ Գաղտնի Շախմատ ♟️</a>
+    </div>
+  </div>
+
+  <h2>Սա քեզ իմ թիթիզ❤️</h2>
+  <div id="auth">
+    <p>Գրիր գաղտնի կոդը՝</p>
+    <input type="password" id="codeInput" placeholder="Գաղտնի կոդը">
+    <br>
+    <button onclick="checkCode()">Մուտք գործել</button>
+  </div>
+
+  <div id="heartSection" class="hidden">
+    <p>Կտտացրու սրտիկին՝ բացելու համար</p>
+    <button onclick="showContent()">❤️</button>
+  </div>
+
+  <div id="content">
+    <div class="poem">
+      <span class="heart">❤️</span>
+     ❤️ Այսօրվա արևը 
+Հուշեց քո մասին❤️
+❤️Արևը վառվեց
+Քո մասին պատմեց❤️
+❤️Պատմեց ինչ գիտեի
+Լսեցի նրան❤️
+❤️Լսելուց հետո էլ
+Նրան ասեցի❤️
+❤️Որ կա մի էակ
+Ով ամեն ձևով❤️
+❤️Կկարողանա
+Ձեզ փոխարինել❤️
+❤️Զարմացան աստղերը
+Զարմացավ արևը❤️
+❤️Հայտնվեց լուսինը
+Զարմացավ և ինքը❤️
+❤️Զարմացրի բոլորին
+Իսկ նրանք ասեցին❤️
+❤️Եթե  այդպես է
+Մենք էլ չենք մնա❤️
+❤️Եթե կա մեկը
+Մեզ հետ հավասար❤️
+❤️Մենք կհեռանանք 
+Ասացի նրանց❤️
+❤️Սկզբից արևին
+Երբ նա քնած է❤️
+❤️Դու փոխարինիր
+Մարդկանց ջերմացրու❤️
+❤️Ու լույս հաղորդիր
+Անցա աստղերին❤️
+❤️Ու նաև լուսնին
+Ասեցի նրանց❤️
+❤️Երբ նա քնած է
+Դուրս եկեք երկինք❤️
+❤️Փայլեք ձեր տեսքով
+Մինչև առավոտ❤️
+❤️Իսկ առավոտը
+Երբ նա արթնանա ❤️
+❤️Կրկին գնացեք
+Զիջեք ձեր տեղը❤️
+❤️Եկավ գիշերը
+Երկինքը շողաց❤️
+❤️Արև ու լուսին
+Միաձուլվեցին❤️
+❤️Մի մարմին դարձան
+Ու անեացան❤️
+❤️Եկավ հրեշտակ
+Իր փայլուն տեսքով❤️
+❤️Փայլեց ու շողաց 
+Ես դա զգացի❤️
+❤️Աննաս էր փայլում
+Ու երկրի վրա❤️
+❤️Իր շողքը գցում
+Մոտեցա նրան❤️
+❤️Կամաց ասեցի
+Դու իմ հրեշտակ❤️
+❤️Ինչու ուշացար
+Խառնաշփոթ էր❤️
+❤️Նոր առաջացել
+Չգիտեին որ դու❤️
+❤️ԵՒ արեգակ ես
+ԵՒ պայծառ լուսին❤️
+❤️ԵՒ շողացող գանձ
+Ասացի նրանց❤️
+❤️Երբ դու հայտնվես
+Նրանք հեռանան❤️
+❤️Նեղվեցին կարծես
+Բայց անեացան❤️
+❤️Համաձայնեցին
+Որ քեզնից բացի❤️
+❤️Չկա էլ մեկը
+Այս երկրի վրա❤️
+❤️Որ կարողանա
+Ջերմ շող հաղորդի❤️
+❤️Ու անվերջ փայլի
+Համաձայնեցին❤️
+❤️Քանի որ նրանք
+Տեսան քո տեսքը❤️
+❤️Տեսան քո փայլը
+Քո ամեն ինչը❤️
+❤️Սոխակիդ ձայնը
+Հիմա ջերմացնող ❤️
+❤️Շատ հրաշքներ կան
+Արևը լուսինը❤️
+❤️Աստղերը ու դու
+Ամեն ինչ լավ էր❤️
+❤️Մինչև այն պահը 
+Երբ անձրև տեղաց❤️
+❤️Սկզբից հանդարտ էր
+Բայց ուժեղացավ❤️
+❤️Ու կարկուտ դարձավ
+Օրը մռայլվեց`❤️
+❤️Անհանգստացրեց
+Եկան բոլորը ❤️
+❤️Արև ու լուսին
+Անհամար աստղեր❤️
+❤️Փորձեցին շտկել
+Չկարողացան❤️
+❤️Աննաս էլ եկավ
+Միացավ նրանց❤️
+❤️Մինչև կսկսեր
+Իր խոսքը ասել❤️
+❤️Կարկուտը գնաց
+Նա չդիմացավ❤️
+❤️Գոլորշի դարձած
+Տխուր նա գնաց❤️
+❤️Մռայլը անցավ
+Կարկուտն հեռացավ❤️
+❤️Ու այդ օրվանից
+Էլ մութ օր չեղավ❤️
+
+
+      <span class="heart">❤️</span>Սամը միշտ քո հետա❤️
+      <span class="heart">❤️</span>Մեռնեմ կյանքիդ իմ հրեշտակ❤️
+    </div>
+
+    <div class="timer">
+      <span class="heart">❤️</span>Մենք իրար ճանաչում ենք՝ <span id="timeSince"></span>
+    </div>
+
+    <div class="timeofday-message" id="timeofdayMessage"></div>
+
+    <div class="planet">
+      <span class="heart">❤️</span><strong>Մեր մոլորակը կանգ է առել այն օրվանից, երբ ես քեզ ճանաչեցի՝ 2023 թվականի սեպտեմբերի 22-ից</strong><span class="heart">❤️</span>
+    </div>
+
+    <div class="thoughts-counter">
+      <p>Քեզ մասին իմ մտքերի քանակը՝ <span id="thoughts"></span></p>
+    </div>
+
+    <p style="margin-top:30px; font-weight: bold">Սամոյի կողմից իր արևին❤️</p>
+  </div> <!-- end of #content -->
+
+  <div id="magicHeartSection" style="display: none;" class="hidden">
+    <!-- Կախարդական Հայելի -->
+    <div id="magicMirrorSection" style="margin-top:50px;">
+      <h2><span class="heart">❤️</span> Հայելի <span class="heart">❤️</span></h2>
+      <button onclick="revealMagicMessage()" style="font-size:18px; padding:10px 20px;">Նայիր հայելուն</button>
+      <p id="magicMessage" style="margin-top:20px; font-style:italic;"></p>
+    </div>
+
+    
+
+  </div>
+
+  <div id="examSection">
+    <h3>Քո արվեստը՝ 40 սրտիկով գնահատված</h3>
+    <div class="certificate">
+      <h4>Սերտիֆիկատ</h4>
+      <p><strong>Գծագրություն՝ 20/20</strong></p>
+      <p>Գծերը մաքուր են, ինչպես սիրտդ։ Քանի որ դու գծում ես ոչ թե մատիտով, այլ հոգով։</p>
+      <p><strong>Կոմպոզիցիա՝ 20/20</strong></p>
+      <p>Դու ինքդ՝ կատարյալ կոմպոզիցիա ես։</p>
+      <p><strong>Ընդամենը՝ 40/40</strong></p>
+    </div>
+    <div class="hearts-40" id="heartsRow"></div>
+    <div class="drawing">
+      <p>Գնահատականը պարզապես թիվ է։ Ես միշտ քեզ հետ եմ❤️</p>
+    </div>
+  </div>
+
+  <div id="chessText" class="hidden">
+    <h3>Շախմատ</h3>
+    <p>Շախմատը մտքի ուժի և ռազմավարության արվեստ է։ Այն շատ ավելին է, քան պարզապես խաղ՝ դա մի մեթոդ է մտածելու և պայքարելու համար։ Ամեն քայլ, ամեն շախ՝ որոշում է խաղի ելքը։</p>
+    <p>Իմ համար դու հենց այդ ուժն ես՝ խելացի, մարտական, որ միշտ դիմադրում ես և միշտ հաղթում։</p>
+    <p>Քեզանից ոգեշնչված, ես վստահ եմ, որ դու երբեք չես հանձնվում՝ ինչպես շախմատի լավագույն խաղացողները։ Քո բոլոր քայլերը՝ անկախ ամեն ինչից, իմաստ ունեն։</p>
+    <p>Շախմատը սկսվում է մեկ քայլից, բայց հաղթանակը գալիս է համբերությամբ և ճիշտ ռազմավարությամբ։ Իսկ դու ունես և՛ մեկը, և՛ մյուսը։</p>
+    <p class="heart">❤️Եթե կյանքը շախմատ լիներ, ես միշտ կուզեի քեզ հետ լինել մի թիմում։ Ու ոչ թե հաղթելու համար… այլ վստահ լինելու, որ ամեն քայլը մտածված է❤️</p>
+  </div>
+
+  <div id="booksSection" class="hidden">
+    <h3>Գրքեր</h3>
+    <div class="book-quotes">
+      <p><span>1.</span> ❤️ <strong>«Ննջող գեղեցկուհին»</strong> - Սթիվեն Քինգ (Թրիլեր)</p>
+      <p><span>2.</span> ❤️ <strong>«Արձագանք»</strong> - Սառա Ջ. Մաս (Ֆանտազիա, Ռոմանտիկ)</p>
+      <p><span>3.</span> ❤️ <strong>«Երազների քաղաք»</strong> - Քրիստինա Լորեն (Ռոմանտիկ, Ժամանակակից)</p>
+      <p><span>4.</span> ❤️ <strong>«Նոր ընկեր»</strong> - Քորա Գ. Ֆոստեր (Միստիկ, Հոգեբանական)</p>
+      <p><span>5.</span> ❤️ <strong>«Վանականներին ունեն գաղտնիք»</strong> - Ռուբեն Եսայան</p>
+      <p><span>6.</span> ❤️ <strong>«Խոստում»</strong> - Ջոդի Պիկուլտ (Ընտանեկան դրամա)</p>
+      <p><span>7.</span> ❤️ <strong>«Հեծանվավազ»</strong> - Մեթ Ռիչարդսոն (Ֆանտազիա, Ռոմանտիկ)</p>
+      <p><span>8.</span> ❤️ <strong>«Հաջորդը»</strong> - Մեթ Մանչ (Դիստոպիա, Միջազգային)</p>
+      <p><span>9.</span> ❤️ <strong>«Մարդկանց մեջ»</strong> - Էլլեն Հոփկինս (Ֆիլմիկ, Հոգեբանական)</p>
+      <p><span>10.</span> ❤️ <strong>«Ավարտված ճանապարհ»</strong> - Ջենիֆեր Նիվան (Ռոմանտիկ)</p>
+      <p><span>11.</span> ❤️ <strong>«Սիրտ»</strong> - Ջեյմս Ռիշմանը (Թրիլեր, Դրամա)</p>
+      <p><span>12.</span> ❤️ <strong>«Գրիգորի»</strong> - Ֆ. Ս. Ֆիլմա (Ֆանտազիա)</p>
+      <p><span>13.</span> ❤️ <strong>«Բամբակ»</strong> - Դեբրա Մ. Ֆայ (Հոգեբանական)</p>
+      <p><span>14.</span> ❤️ <strong>«Չարենց»</strong> - Դանիել Դոլոմանյան (Ֆանտազիա, Դրամա)</p>
+      <p><span>15.</span> ❤️ <strong>«Ամենալավ ժամանակը»</strong> - Իննա Ֆին (Ինտելեկտուալ դրամա)</p>
+      <p><span>16.</span> ❤️ <strong>«1983»</strong> - Ջորջ Օրուել (Դիստոպիա)</p>
+      <p><span>17.</span> ❤️ <strong>«Երբ ես հանդիպեցի քեզ»</strong> - Լիզա Ջոնս (Ռոմանտիկ)</p>
+      <p><span>18.</span> ❤️ <strong>«Կարոտ»</strong> - Հարութ Ավագյան (Հոգեբանական, Ժամանակակից)</p>
+      <p><span>19.</span> ❤️ <strong>«Քամին»</strong> - Մայքլ Վ. Ֆոուլ (Ֆանտազիա)</p>
+      <p><span>20.</span> ❤️ <strong>«Չկա արգելափակված»</strong> - Իռինա Սենթ (Ֆանտազիա, Միստիկա)</p>
+      <p><span>21.</span> ❤️ <strong>«Հաղթանակը միայն մենք»</strong> - Սայմոն Սթերն (Ժամանակակից)</p>
+      <p><span>22.</span> ❤️ <strong>«Ավելի ուշ»</strong> - Քեմերի Քեդդ (Մանկական)</p>
+      <p><span>23.</span> ❤️ <strong>«Արհեստի ճանապարհը»</strong> - Ջենիֆեր Թոմաս (Կոմեդիա, Կենտրոնացած)</p>
+      <p><span>24.</span> ❤️ <strong>«Սերը կարոտում»</strong> - Մադելին Շուկ (Ռոմանտիկ, Ժամանակակից)</p>
+      <p><span>25.</span> ❤️ <strong>«Ճանաչել քեզ»</strong> - Քնեքոլա Գլոնդ (Հոգեբանական, դրամա)</p>
+      <p><span>26.</span> ❤️ <strong>«Պատրաստիր ինձ»</strong> - Լիզա Ջ. Սմիթ (Թրիլեր, Հոգեբանական)</p>
+      <p><span>27.</span> ❤️ <strong>«Ավելի ուշ»</strong> - Քեմերի Քեդդ (Մանկական)</p>
+      <p><span>28.</span> ❤️ <strong>«Հուսալի ապագա»</strong> - Քիմբերլի Քլարկ (Սոցիալական, ժամանակակից)</p>
+      <p><span>29.</span> ❤️ <strong>«Իմ կամք»</strong> - Ջերեմի Սևիլ (Հոգեբանական)</p>
+      <p><span>30.</span> ❤️ <strong>«Մեկնություն»</strong> - Անժելա Ֆիզեռ (Ռոմանտիկ, Դրամա)</p>
+    </div>
+
+    <!-- Ավելացված մտքեր՝ միայն գրքեր բաժնում -->
+    <div class="thoughts">
+      <h4>Մտքեր գրքերից</h4>
+      <ul>
+        <li>«Հրաշքներ պատահում են միայն հոլիվուդյան ֆիլմերում: Մենք միայն փորձում ենք մեղմել ցավը և պահպանել այն համեստ շարժումը, որն ունենք»</li>
+        <li>«Վատ կյանքին հարմարվելու միակ միջոցը ձևացնելն է, որ այդ ամենը քեզ հետ չի կատարվում»</li>
+        <li>«Վիշտը ծիծեռնակ է, մի օր արթնանում ես քեզ թվում է, որ ընդմիշտ չվել է ու չի վերադառնա, մինչդեռ միայն չվել է տաք երկրներ փետուրները տաքացնելու նպատակով»</li>
+        <li>«Դուք երբեք չեք հասնի ձեր նպատակներին, եթե կանգնեք և քարեր նետեք հաչացող շան վրա»</li>
+        <li>«Մարդիկ կարող են մոռանալ ձեր խոսքերն ու ձեր արարքները, բայց երբեք չեն մոռանա, թե ինչ եք ստիպել նրանց զգալ»</li>
+        <li>«Որպեսզի ճանաչես աշխարհը, պետք է ճանաչես նախ ինքներդ քեզ։ Երբ դու հասկանում ես քեզ, միայն այդ ժամանակ ես կարողանում հասկանալ ուրիշներին և նրանց շուրջը տեղի ունեցողը»</li>
+        <li>«Կյանքի ճշմարտությունը ոչ միայն այն է, թե ինչ կա ներսում, այլև այն, թե ինչ կարող ենք անել դրանով՝ մենք երբեք չենք կարող այլ մարդկանց փոխել, բայց կարող ենք փոխել նրանց զգացմունքները»</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    function checkCode() {
+      const code = document.getElementById("codeInput").value;
+      if (code === "09.01.2007") {
+        document.getElementById("auth").style.display = "none";
+        document.getElementById("heartSection").style.display = "block";
+      } else {
+        alert("Սխալ կոդ է։");
+      }
+    }
+
+    function showContent() {
+  document.getElementById("heartSection").style.display = "none";
+  document.getElementById("content").style.display = "block";
+  document.getElementById("menuToggle").style.display = "block";
+  document.getElementById("examSection").style.display = "none";
+  document.getElementById("chessText").style.display = "none";
+  updateTimer();
+  setInterval(updateTimer, 1000);
+  timeOfDayMessage();
+  startThoughtStats();
+  document.getElementById("bg-music").play();
+}
+
+    function updateTimer() {
+      const startDate = new Date("2023-09-22T00:00:00");
+      const now = new Date();
+      const diff = now - startDate;
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+      document.getElementById("timeSince").textContent =
+        `${days} օր, ${hours} ժամ, ${minutes} րոպե, ${seconds} վայրկյան`;
+    }
+
+    function timeOfDayMessage() {
+      const hour = new Date().getHours();
+      let message = "";
+      if (hour >= 5 && hour < 12) message = "Բարի առավոտ իմ արև❤️";
+      else if (hour >= 12 && hour < 17) message = "Բարի ցերեկ իմ հրեշտակ❤️";
+      else if (hour >= 17 && hour < 22) message = "Բարի երեկո իմ շող❤️";
+      else message = "Բարի գիշեր իմ լուսին❤️";
+      document.getElementById("timeofdayMessage").innerHTML =
+        `<span class="heart">❤️</span>${message}<span class="heart">❤️</span>`;
+    }
+
+    function startThoughtStats() {
+      const startDate = new Date("2023-09-22T00:00:00");
+      setInterval(() => {
+        const now = new Date();
+        const diffSec = Math.floor((now - startDate) / 1000);
+        const thoughts = diffSec * 0.8;
+        document.getElementById("thoughts").textContent =
+          Math.floor(thoughts).toLocaleString();
+      }, 1000);
+    }
+
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+
+    function showMainContent() {
+  clearMagicMirror();
+  clearSecretChessBoard();
+      document.getElementById("examSection").style.display = "none";
+      document.getElementById("content").style.display = "block";
+      document.getElementById("chessText").style.display = "none";
+      document.getElementById("menu").style.display = "none";
+      document.getElementById("booksSection").style.display = "none";
+    }
+
+    function showExamSection() {
+  clearMagicMirror();
+  clearSecretChessBoard();
+      document.getElementById("examSection").style.display = "block";
+      document.getElementById("content").style.display = "none";
+      document.getElementById("chessText").style.display = "none";
+      document.getElementById("booksSection").style.display = "none";
+      document.getElementById("menu").style.display = "none";
+    }
+
+    function showChessText() {
+  clearMagicMirror();
+  clearSecretChessBoard();
+      document.getElementById("chessText").style.display = "block";
+      document.getElementById("content").style.display = "none";
+      document.getElementById("examSection").style.display = "none";
+      document.getElementById("booksSection").style.display = "none";
+      document.getElementById("menu").style.display = "none";
+    }
+
+    function showBooksSection() {
+  clearMagicMirror();
+  clearSecretChessBoard();
+      document.getElementById("booksSection").style.display = "block";
+      document.getElementById("examSection").style.display = "none";
+      document.getElementById("content").style.display = "none";
+      document.getElementById("chessText").style.display = "none";
+      document.getElementById("menu").style.display = "none";
+    }
+  
+function showMagicHeart() {
+  clearSecretChessBoard();
+  document.getElementById("magicHeartSection").style.display = "block";
+  document.getElementById("content").style.display = "none";
+  document.getElementById("examSection").style.display = "none";
+  document.getElementById("chessText").style.display = "none";
+  document.getElementById("booksSection").style.display = "none";
+  document.getElementById("menu").style.display = "none";
+}
+
+// Կախարդական Հայելի
+const mirrorMessages = [
+  "Ամեն հայելի քեզ պիտի նախանձի։",
+  "Աշխարհի ամենագեղեցիկ հայացքը այս պահին էկրանին է։",
+  "Քո սիրտը փայլում է նույնիսկ հայելու հետևում։",
+  "Աստղերն այսօր քեզ են շողում։",
+  "Հայելին խոսեց՝ ասաց՝ դու հրաշք ես։"
+];
+
+function revealMagicMessage() {
+  const message = mirrorMessages[Math.floor(Math.random() * mirrorMessages.length)];
+  document.getElementById("magicMessage").innerHTML = `<span class="heart">❤️</span> ${message} <span class="heart">❤️</span>`;
+}
+
+
+
+function showMagicHeart() {
+  clearSecretChessBoard();
+  document.getElementById("magicHeartSection").style.display = "block";
+  document.getElementById("content").style.display = "none";
+  document.getElementById("examSection").style.display = "none";
+  document.getElementById("chessText").style.display = "none";
+  document.getElementById("booksSection").style.display = "none";
+  document.getElementById("menu").style.display = "none";
+}
+
+
+function showMagicHeart() {
+  clearSecretChessBoard();
+  document.getElementById("magicHeartSection").style.display = "block";
+  document.getElementById("content").style.display = "none";
+  document.getElementById("examSection").style.display = "none";
+  document.getElementById("chessText").style.display = "none";
+  document.getElementById("booksSection").style.display = "none";
+  document.getElementById("menu").style.display = "none";
+}
+
+function showMainContent() {
+  clearMagicMirror();
+  clearSecretChessBoard();
+  document.getElementById("magicHeartSection").style.display = "none";
+  document.getElementById("content").style.display = "block";
+  document.getElementById("examSection").style.display = "none";
+  document.getElementById("chessText").style.display = "none";
+  document.getElementById("booksSection").style.display = "none";
+  document.getElementById("menu").style.display = "block";
+}
+
+
+function showSecretChessBoard() {
+  clearMagicMirror();
+  document.getElementById("secretChessBoardSection").style.display = "block";
+  document.getElementById("content").style.display = "none";
+  document.getElementById("magicHeartSection").style.display = "none";
+  document.getElementById("examSection").style.display = "none";
+  document.getElementById("booksSection").style.display = "none";
+  document.getElementById("chessText").style.display = "none";
+  document.getElementById("menu").style.display = "none";
+  createSecretChessBoard();
+}
+
+function createSecretChessBoard() {
+  const board = document.getElementById("chessBoard");
+  if (board.children.length > 0) return; // Prevent duplicate creation
+  const message = document.getElementById("chessMessage");
+  const pieces = {
+    "♞": "❤️Քո շրջանցիկ ուղիները միշտ ինձ հասցնում են ճիշտ տեղ։❤️",
+    "♛": "❤️Քեզ նման շարժում ունեն միայն նրանք, ովքեր ուժն ու նրբությունը համատեղում են։❤️",
+    "♚": "❤️Նույնիսկ երբ լուռ ես, դաշտը հսկում ես դու։❤️",
+    "♜": "❤️Դու ուղիղ ես, ուժեղ և վստահ։❤️",
+    "♝": "❤️Քո անկյունային հայացքը միշտ հասնում է խորքը։❤️",
+    "♟": "❤️Թույլ երևացողները կարող են անսպասելի հարվածներ հասցնել։❤️"
+  };
+
+  for (let row = 0; row < 8; row++) {
+    for (let col = 0; col < 8; col++) {
+      const square = document.createElement("div");
+      square.className = "square";
+      square.style.width = "40px";
+      square.style.height = "40px";
+      square.style.display = "flex";
+      square.style.justifyContent = "center";
+      square.style.alignItems = "center";
+      square.style.fontSize = "20px";
+      square.style.cursor = "pointer";
+      square.style.backgroundColor = (row + col) % 2 === 0 ? "#eee" : "#444";
+      square.style.color = (row + col) % 2 === 0 ? "black" : "white";
+
+      // Place a few pieces
+      if (row === 0 && col === 1) square.textContent = "♞";
+      if (row === 0 && col === 3) square.textContent = "♛";
+      if (row === 0 && col === 4) square.textContent = "♚";
+      if (row === 0 && col === 0) square.textContent = "♜";
+      if (row === 0 && col === 2) square.textContent = "♝";
+      if (row === 1 && col === 1) square.textContent = "♟";
+
+      square.addEventListener("click", () => {
+        if (pieces[square.textContent]) {
+          message.textContent = pieces[square.textContent];
+        }
+      });
+
+      board.appendChild(square);
+    }
+  }
+}
+
+
+function clearSecretChessBoard() {
+  const board = document.getElementById("chessBoard");
+  const message = document.getElementById("chessMessage");
+  if (board) board.innerHTML = '';
+  if (message) message.textContent = '';
+  const section = document.getElementById("secretChessBoardSection");
+  if (section) section.style.display = "none";
+}
+
+
+function clearMagicMirror() {
+  const message = document.getElementById("magicMessage");
+  if (message) message.textContent = '';
+  const section = document.getElementById("magicHeartSection");
+  if (section) section.style.display = "none";
+}
+
+</script>
+
+<audio id="bg-music" autoplay loop>
+  <source src="Sting - Shape of my heart.mp3" type="audio/mpeg">
+  Ձեր բրաուզերը չի աջակցում աուդիո նվագարկիչին։
+</audio>
+
+<div id="secretChessBoardSection" class="hidden">
+  <h3>Գաղտնի Շախմատ</h3>
+  <p>Սեղմիր ֆիգուրներից որևէ մեկը՝ տեսնելու մոգական խոսքը։</p>
+  <div id="chessBoard" style="width: 320px; height: 320px; display: grid; grid-template-columns: repeat(8, 1fr); border: 4px solid #444; margin: 20px auto;"></div>
+  <div id="chessMessage" style="font-size: 18px; margin-top: 20px; max-width: 80%; margin-left: auto; margin-right: auto; color: #333; font-style: italic;"></div>
+</div>
+
+</body>
+</html>
